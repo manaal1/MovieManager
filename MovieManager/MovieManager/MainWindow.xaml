@@ -1,0 +1,58 @@
+﻿<Window x:Class="MovieManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Movie Manager" WindowStartupLocation="CenterScreen" Width="800" Height="597" MinWidth="800" MinHeight="599">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF7F478B" Offset="0.105"/>
+                <GradientStop Color="#FFD9C0DA" Offset="0.016"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="505*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Select a Movie:" HorizontalAlignment="Left" Margin="98,22,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <ComboBox x:Name="cmbxTitle" HorizontalAlignment="Left" Margin="192,26,0,0" VerticalAlignment="Top" 
+                  Width="200" SelectionChanged="cmbxTitle_SelectionChanged"/>
+        <Grid x:Name="gridBody" Margin="0" Grid.Row="1">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF008491" Offset="0"/>
+                    <GradientStop Color="#FFA2EEF5" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="445*"/>
+                <ColumnDefinition Width="347*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Title:" HorizontalAlignment="Left" Margin="30,64,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <Label Content="Genre:" HorizontalAlignment="Left" Margin="30,102,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <Label Content="ReleaseDate:" HorizontalAlignment="Left" Margin="30,141,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <Label Content="Sold:" HorizontalAlignment="Left" Margin="30,181,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <Label Content="Description:" HorizontalAlignment="Left" Margin="30,215,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <Label Content="Picture Path:" HorizontalAlignment="Left" Margin="20,44,0,0" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold"/>
+            <Label x:Name="lblRating" Content="Rating:" HorizontalAlignment="Left" Margin="20,0,0,57" VerticalAlignment="Bottom" Grid.Column="1" FontWeight="Bold"/>
+            <Label Content="Movie Information" HorizontalAlignment="Center" Margin="308,10,308,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="txtTitle" Height="23" Margin="115,68,20,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtGenre" HorizontalAlignment="Left" Height="23" Margin="115,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+            <TextBox x:Name="txtRDate" HorizontalAlignment="Left" Height="23" Margin="115,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+            <TextBox x:Name="txtDesc" Height="196" Margin="115,219,20,0" TextWrapping="Wrap" VerticalAlignment="Top" AcceptsReturn="True"/>
+            <CheckBox x:Name="chbxSold" Content="" HorizontalAlignment="Left" Margin="115,187,0,0" VerticalAlignment="Top"/>
+            <Image x:Name="imgMoviePic" Grid.Column="1" Margin="20,141,30,88"/>
+            <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Right" Margin="0,0,20,38" VerticalAlignment="Bottom" Width="90" Height="35" Click="btnSave_Click"/>
+            <TextBox x:Name="txtPicPath" Grid.Column="1" Height="23" Margin="20,68,30,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtRating" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="75,424,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51"/>
+            <Button x:Name="btnSelectPicture" Content="Select Picture" Grid.Column="1" HorizontalAlignment="Right" Margin="0,102,30,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="0.587,0.4" Height="22" Click="btnSelectPicture_Click"/>
+            <Label Content="ID:" HorizontalAlignment="Left" Margin="30,28,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <Label x:Name="lblID" Content="" HorizontalAlignment="Left" Margin="115,28,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <Label Content="(mm/dd/yyyy)" HorizontalAlignment="Left" Margin="270,141,0,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic"/>
+            <Label x:Name="lblRating_Copy" Content="Box Office Collections:" HorizontalAlignment="Left" Margin="20,0,0,20" VerticalAlignment="Bottom" Grid.Column="1" FontWeight="Bold"/>
+            <TextBox x:Name="txtBoxOfficeColl" Grid.Column="1" HorizontalAlignment="Right" Height="23" Margin="0,0,87,20" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="98" HorizontalContentAlignment="Right"/>
+        </Grid>
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Right" Margin="0,26,274,0" VerticalAlignment="Top" Width="75" Height="22" Click="btnAdd_Click"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Right" Margin="0,26,190,0" VerticalAlignment="Top" Width="75" Height="22" Click="btnDelete_Click"/>
+        <Button x:Name="btnRefresh" Content="Refresh" HorizontalAlignment="Right" Margin="0,26,106,0" VerticalAlignment="Top" Width="75" Height="22" Click="btnRefresh_Click"/>
+    </Grid>
+</Window>
